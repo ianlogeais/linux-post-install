@@ -1,2 +1,2 @@
-# linux-post-install
-Linux post install script to make life easier
+# Ubuntu linux-post-install
+Ubuntu linux post install script to make life easier
