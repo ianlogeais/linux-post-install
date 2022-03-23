@@ -2,12 +2,15 @@
 
 # Global system update
 
-apt-get update | apt-get upgrade
+echo 'What packet manager do you want to use ? (e.g yum, apt-, apt-get...)'
+read packetmanager
+
+$packetmanager update | $packetmanager upgrade
 
 
-# We install first common package downloader like pip3 or npm to avoid any problems
+# We install first common packet manager like pip3 or npm to avoid any problems
 
-apt-get install -y npm python3-pip
+$packetmanager install -y npm python3-pip
 
 
 # We let the user choose what server he want to install
@@ -21,26 +24,26 @@ read bdd
 if [ "$bdd" == "firebase" ]; then
     npm install -g firebase-tools
 else
-    apt-get install -y $bdd-server
+    $packetmanager install -y $bdd-server
 fi
 
 # Major servers
 
-apt-get install -y $webserver  
-apt-get install -y phpmyadmin
+$packetmanager install -y $webserver  
+$packetmanager install -y phpmyadmin
 
 
 # Major languages ruby,golang,php,java,python3,nodejs,react
 
-apt-get install -y php8
+$packetmanager install -y php8
 
-apt-get install -y ruby-full
+$packetmanager install -y ruby-full
 
-apt-get install -y golang-go 
+$packetmanager install -y golang-go 
 
-apt-get install -y default-jre # Java
+$packetmanager install -y default-jre # Java
 
-apt-get install -y python3
+$packetmanager install -y python3
 
-apt-get install -y nodejs
+$packetmanager install -y nodejs
 npm -g install -y create-react-app
